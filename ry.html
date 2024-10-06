@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the vibrant world of exoplanets. Learn about planets beyond our solar system and what makes each of them special!">
+    <title>Exoplanetary Discoveries</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #080f1c;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            background: linear-gradient(to right, #0a3d62, #1e90ff, #0a3d62);
+            background-image:url('C:\\Users\\DELL\\Downloads\\galaxy3.jpg');
+            text-align: center;
+            padding: 100px 20px;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 5em;
+            color: #00ffd4;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-top: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.9;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+            background-color: #0e1c3a;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+        }
+
+        .illustration {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            transition: box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+        }
+
+        .info-box {
+            background-color: #1e1f33;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+
+        .info-box:hover {
+            background-color: #333455;
+            transform: translateY(-10px);
+        }
+
+        ul {
+            padding-left: 40px;
+            font-size: 1.2em;
+        }
+
+     .galaxy-bg {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    padding: 60px 20px;
+    color: #ffffff;
+    background-image: url('https://cdn.pixabay.com/photo/2014/11/23/16/18/astronomy-542611_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+}
+
+.fact-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.fact-box {
+    position: relative; /* Make fact-box the positioning context for the popup */
+    width: 30%;
+    background: linear-gradient(135deg, #f06d06, #ffdd00);
+    margin: 15px;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    color: #0e1c3a;
+    transition: transform 0.3s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.popup {
+    display: none; /* Hidden by default */
+    top: 100%; /* Position below the fact box */
+    left: 50%; /* Start from the center of the fact box */
+    transform: translate(25%, 2%); /* Center horizontally and add a slight gap */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%; /* Adjust width as needed to fit inside fact box */
+    height: auto;
+    max-width: 350px; /* Limit max width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Show the popup on hover */
+.fact-box:hover .popup {
+    display: block; /* Show popup when hovering over the fact box */
+}
+
+.fact-box h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.fact-box p {
+    font-size: 1.3em;
+}
+
+.fact-box img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+        .btn-learn-more {
+            background-color: #00ffa0;
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.6em;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin: 60px auto;
+        }
+
+        .btn-learn-more:hover {
+            background-color: #00cc80;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #111d4a;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        .footer-bg {
+            background-image:url("C:\\Users\\DELL\\Downloads\\ed");
+            background-size: cover;
+            background-position: center;
+            padding: 70px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: right;
+        }
+
+        nav a {
+            color: #ffd700;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Show the home section by default
+        window.onload = function() {
+            showSection('home');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About Us</a>
+        <a href="#" onclick="showSection('services')">Services</a>
+        <a href="#" onclick="showSection('testimonials')">Testimonials</a>
+        <a href="#" onclick="showSection('contact')">Contact Us</a>
+    </nav>
+
+    <header>
+        <h1>The Marvelous Exoplanetary Worlds</h1>
+        <p>Discover planets beyond our imagination!</p>
+    </header>
+
+    <div id="home" class="section active">
+        <h2>Welcome to Exoplanetary Discoveries</h2>
+        <div class="info-box">
+            <p>Explore the universe and uncover the mysteries of exoplanets!</p>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <div class="info-box">
+            <p>We are passionate about space exploration and educating others about exoplanets. Our mission is to inspire curiosity and foster a love for astronomy.</p>
+        </div>
+    </div>
+
+    <div id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="info-box">
+            <ul>
+                <li>Workshops on Exoplanet Exploration</li>
+                <li>Personal Consultations for Enthusiasts</li>
+                <li>Guided Stargazing Events</li>
+                <li>Educational Resources for Schools</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="testimonials" class="section">
+        <h2>Testimonials</h2>
+        <div class="info-box">
+            <blockquote>
+                <p>"Exoplanetary Discoveries opened up a whole new world for me! The workshops are incredibly engaging and informative." - <strong>Jane D.</strong></p>
+            </blockquote>
+            <blockquote>
+                <p>"The team is so knowledgeable and passionate about space. I learned so much during the consultation!" - <strong>Mark T.</strong></p>
+            </blockquote>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="info-box">
+            <p>If you have any questions or would like to know more about our services, feel free to reach out!</p>
+            <p>Email: info@exoplanetarydiscoveries.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="illustration">
+            <h2>What Are Exoplanets?</h2>
+        </div>
+
+        <div class="info-box">
+            <p><span class="highlight">Exoplanets</span> are planets beyond our solar system. Some orbit stars like our Sun, while others drift freely in space. With over 5,600 confirmed exoplanets, and many more waiting to be discovered, exoplanets come in all shapes and sizes!</p>
+        </div>
+
+        <div class="info-box">
+            <h2>How Do We Discover Them?</h2>
+            <p>Astronomers have found exoplanets using methods like:</p>
+            <ul>
+                <li><strong>Transit Method:</strong> Observing the dimming of a star as a planet crosses in front of it.</li>
+                <li><strong>Radial Velocity:</strong> Measuring tiny movements in a star due to the gravitational tug of a planet.</li>
+                <li><strong>Direct Imaging:</strong> Capturing images of planets by masking out the light of their parent stars.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="galaxy-bg">
+        <h2>Famous Exoplanets</h2>
+        <div class="fact-section">
+            <div class="fact-box">
+                <h3>Proxima Centauri b</h3>
+                <p>The closest exoplanet to Earth, just 4.2 light-years away. It might be rocky and possibly within its star's habitable zone!</p>
+                <img src="C:\\Users\\DELL\\Downloads\\proxima.gif" alt="Proxima Centauri b">
+                <div class="popup">
+                    <h3>Proxima Centauri b</h3>
+                    <p>
+                        Proxima Centauri b is an exoplanet located approximately 4.2 light-years from Earth, making it the closest known exoplanet to our solar system. It orbits within the habitable zone of its star, Proxima Centauri, where conditions may allow for liquid water to exist, a crucial element for life as we know it. The planet is roughly 1.17 times the size of Earth and is believed to be rocky in nature. Proxima Centauri is a red dwarf star, smaller and cooler than our Sun, which impacts the planet's climate. Notably, Proxima Centauri b experiences tidal locking, meaning one side of the planet always faces its star, leading to extreme temperature differences between the two sides.</p>
+                </div>
+            </div>
+    
+            <div class="fact-box">
+                <h3>Kepler-452b</h3>
+                <p>A super-Earth located in the habitable zone of a star similar to the Sun. This planet is often called Earth’s cousin.</p>
+                <img src="C:\\Users\\DELL\\Downloads\\kepler.gif" alt="Kepler-452b">
+                <div class="popup">
+                    <h3>Kepler-452b</h3>
+                    <p>Kepler-452b is located about 1,400 light-years away in the constellation Cygnus and is often referred to as "Earth's cousin" due to its Earth-like characteristics. The planet is approximately 60% larger than Earth and resides in the habitable zone of its star, Kepler-452, which is similar to our Sun. This proximity to a sun-like star enhances the potential for Earth-like conditions, making it a prime candidate for habitability. Kepler-452b has an orbital period of about 385 days, resulting in a longer year than Earth's. Scientists speculate that it could have a rocky surface and possibly contain water, further bolstering its habitability prospects.</p>
+                </div>
+            </div>
+    
+            <div class="fact-box">
+                <h3>Kepler-186f</h3>
+                <p>Known for being the first Earth-sized planet in the habitable zone, increasing hopes for potential life.</p>
+                <img src="C:\\Users\\DELL\\Downloads\\186.gif" alt="Kepler-186f">
+                <div class="popup">
+                    <h3>Kepler-186f</h3>
+                    <p>Kepler-186f is an intriguing exoplanet located about 500 light-years away in the constellation Cygnus. It holds a significant place in the search for extraterrestrial life as it was the first Earth-sized planet discovered in the habitable zone of another star. The planet is about 1.1 times the size of Earth, suggesting a similar composition, which raises hopes for the presence of life-sustaining conditions. Kepler-186f orbits its star, Kepler-186, every 130 days and receives about one-third the sunlight that Earth does. This positioning allows for the potential presence of liquid water on its surface, making it an exciting target for future research and exploration.</p>
+                </div>
+            </div>
+    
+            <div class="fact-box">
+                <h3>Trappist-1e</h3>
+                <p>Part of the Trappist-1 system, a rocky planet with Earth-like conditions, located 40 light-years away.</p>
+                <img src="C:\\Users\\DELL\\Downloads\\trp.webp" alt="Trappist-1e">
+                <div class="popup">
+                    <h3>Trappist-1e</h3>
+                    <p>Trappist-1e is one of the seven Earth-sized exoplanets orbiting the ultra-cool dwarf star Trappist-1, located about 40 light-years away. Among its planetary siblings, Trappist-1e is considered to be in the habitable zone, where conditions may be suitable for liquid water. This exoplanet has a similar size to Earth, with a rocky composition that could potentially support life. Trappist-1e experiences a short orbital period of about 6.1 days, suggesting that it could have a climate akin to Earth's. The star's dim light allows for more stable temperatures on the planet, further enhancing the possibility of a habitable environment. This makes Trappist-1e an exciting candidate for ongoing astronomical studies and the search for extraterrestrial life.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <button class="btn-learn-more" onclick="window.location.href='https://exoplanets.nasa.gov/'">Learn More</button>
+
+    <footer>
+        <div class="footer-bg">
+            <p>&copy; 2024 Exoplanetary Discoveries. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
